@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter ,Route, Switch } from 'react-router-dom'
 import Header from './components/Header'
 import SearchForm from './components/SearchForm'
+import FoundQuote from './components/FoundQuote'
 import logo from './logo.svg';
 import './App.css';
 
@@ -76,6 +77,18 @@ render(){
           </div>
         ))}
     </div>
+    <div className="searchBox">
+    <SearchForm
+          {...this.state}
+          search={this.handleSubmit}
+          change={this.handleChange}
+        />
+        {this.state.foundQuote != null ?
+          <FoundQuote {...this.state}
+              quote={this.state.foundQuote} /> : ''
+            }
+
+      </div>
     <div className="losersBox">
       <h2>Top Losers </h2>
         {this.state.dailyLosers.map((item, key) => (
@@ -85,14 +98,8 @@ render(){
           </div>
         ))}
     </div>
+
     </div>
-    <SearchForm
-          {...this.state}
-          search={this.handleSubmit}
-          change={this.handleChange}
-        />
-{this.state.foundQuote != null ? <p>{this.state.foundQuote.symbol} - {this.state.foundQuote.profile.price}</p> : ''
-} 
 
 
     </div>
