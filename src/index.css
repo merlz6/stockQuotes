@@ -1,13 +1,25 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.gainersBox, .losersBox {
+  border:1px solid black;
+  width:20%;
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.gainersTickerBoxes {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-bottom: .5px solid black;
+  background-color: green;
+}
+.losersTickerBoxes {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-bottom: .5px solid black;
+  background-color: red;
+}
+.winsAndLosesBox {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
 }
